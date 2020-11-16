@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "relations": {
+      "Experiences": {
+        "type": "hasMany",
+        "model": "Experience",
+        "foreignKey": ""
+      },
+      "Educations": {
+        "type": "hasMany",
+        "model": "Education",
+        "foreignKey": ""
+      },
+      "Posts": {
+        "type": "hasMany",
+        "model": "Post",
+        "foreignKey": ""
+      },
+      "accessTokens": {
+        "type": "hasMany",
+        "model": "CustomAccessToken",
+        "foreignKey": "userId"
+      },
+      "PostImage": {
+        "type": "hasMany",
+        "model": "PostImage",
+        "foreignkey": ""
+      }
+    }
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "education": {
+    "dataSource": "db",
+    "public": true
+  },
+  "experience": {
+    "dataSource": "db",
+    "public": true
+  },
+  "post": {
+    "dataSource": "db",
+    "public": true
+  },
+  "CustomAccessToken": {
+    "dataSource": "db",
+    "public": true
+  },
+  "message": {
+    "dataSource": "db",
+    "public": true
+  },
+  "PostImage": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ImageFile": {
+    "dataSource": "myFile",
+    "public": true
+  }
+}

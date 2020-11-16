@@ -1,0 +1,32 @@
+{
+  "name": "experience",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "societe": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "mission": {
+      "type": "string"
+    },
+    "technologie": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "User": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
